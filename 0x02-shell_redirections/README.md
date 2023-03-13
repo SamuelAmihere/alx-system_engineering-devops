@@ -12,3 +12,4 @@
 11. **[10-no_more_js](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/10-no_more_js):** Deletes all the regular files (not the directories) with a .js extension that are present in the current directory and all its subfolders.
 12. **[11-directories](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/11-directories):** A script that counts the number of directories and sub-directories in the current directory.
 13. **[12-newest_files](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/12-newest_files):** A script that displays the 10 newest files in the current directory.
+14. **[13-unique](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/13-unique):** A script that takes a list of words as input and prints only words that appear exactly once.
