@@ -9,3 +9,4 @@
 8. **[7-file](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/7-file):** A shell script that creates a file named exactly \*\\'"Best School"\'\\*$\?\*\*\*\*\*:) containing the text Best School ending by a new line.
 9. **[8-cwd_state](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/8-cwd_state):** Writes into a file the result of another command 
 10. **[9-duplicate_last_line](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/9-duplicate_last_line):** script that duplicates the last line of a file
+11. **[10-no_more_js](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/10-no_more_js):** Deletes all the regular files (not the directories) with a .js extension that are present in the current directory and all its subfolders.
