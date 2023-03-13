@@ -14,3 +14,4 @@
 13. **[12-newest_files](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/12-newest_files):** A script that displays the 10 newest files in the current directory.
 14. **[13-unique](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/13-unique):** A script that takes a list of words as input and prints only words that appear exactly once.
 15. **[14-findthatword](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/14-findthatword):** Display lines containing the pattern “root” from a file.
+16. **[15-countthatword](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/15-countthatword):** Display the number of lines that contain the pattern “bin” in a file
