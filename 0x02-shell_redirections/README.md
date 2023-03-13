@@ -4,3 +4,4 @@
 3. **[2-hellofile](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/2-hellofile):** Display the content of the /etc/passwd file.
 4. **[3-twofiles](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/3-twofiles):** Display the content of two files.
 5. **[4-lastlines](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/4-lastlines):** Display the last 10 lines of a file.
+6. **[5-firstlines](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/5-firstlines):** Display the first 10 lines of a file.
