@@ -20,3 +20,4 @@
 19. **[18-letteronly](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/18-letteronly):** Display all lines of a file starting with a letter.
 20. **[19-AZ](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/19-AZ):** Replace all characters A and c from input to Z and e respectively.
 21. **[20-hiago](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/20-hiago):** Create a script that removes all letters
+22. **[21-reverse](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/21-reverse):** A script that reverses its input.
