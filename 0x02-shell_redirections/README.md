@@ -24,3 +24,4 @@
 23. **[22-users_and_homes](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/22-users_and_homes):** A script that displays all users and their home directories, sorted by users.
 24. **[100-empty_casks](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/100-empty_casks):** A command that finds all empty files and directories in the current directory and all sub-directories.
 25. **[101-gifs](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/101-gifs):** Write a script that lists all the files with a .gif extension in the current directory and all its sub-directories.
+26. **[102-acrostic](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/102-acrostic):** Create a script that decodes acrostics that use the first letter of each line.
