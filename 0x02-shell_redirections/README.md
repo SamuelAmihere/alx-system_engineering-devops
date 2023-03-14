@@ -22,3 +22,4 @@
 21. **[20-hiago](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/20-hiago):** Create a script that removes all letters.
 22. **[21-reverse](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/21-reverse):** A script that reverses its input.
 23. **[22-users_and_homes](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/22-users_and_homes):** A script that displays all users and their home directories, sorted by users.
+24. **[100-empty_casks](https://github.com/SamuelAmihere/alx-system_engineering-devops/blob/master/0x02-shell_redirections/100-empty_casks):** A command that finds all empty files and directories in the current directory and all sub-directories.
