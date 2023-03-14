@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -E *: /etc/passwd | cut -d ':' -f 1 | sort | cd | pwd
+grep -E *: /etc/passwd | cut -d ':' -f 1 | sort | cd /home/ | pwd
