@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $((ls $PATH | grep -E /$ | wc -l))
+ echo "$PATH" | grep -o ":" | wc -l
