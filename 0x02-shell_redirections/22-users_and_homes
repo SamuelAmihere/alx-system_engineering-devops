@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -E home | sort 
+grep -E home /etc/passwd | cut -d ':' -f 2 | sort 
