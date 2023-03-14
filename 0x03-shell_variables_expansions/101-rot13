@@ -1,2 +1,2 @@
 #!/bin/bash
-echo " " | rot13
+tr "N-ZA-Mn-za-m" "A-Za-z"
