@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 #Indefinitely writes "I am alive!" to the file "/tmp/my_process"
 
-str="1"
-while [ $str -ne 0 ]
+a="1"
+while [ $a -eq 1 ]
 do
-	echo "I am alive!" >> /tmp/my_process
-	$"sleep" "2"
+	echo "I am alive!" >> /tmp/my_process 
+	sleep 2
 done
