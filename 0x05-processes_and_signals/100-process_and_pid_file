@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#A script that creates, displays, deletes and terminates itself
+
+file_created=/var/run/holbertonscript.pid
+echo $$ > "$file_created"
+trap 'rm $file_created; exit' SIGQUIT
+trap 'echo "Y U no love me?!"' SIGINT
+trap 'echo "I hate the kill command"; rm $file_created; exit' SIGTERM
+
+
+str="1"
+while [ $str -ne 0 ]
+do
+	echo "To infinity and beyond"
+	$"sleep" "2"
+done
