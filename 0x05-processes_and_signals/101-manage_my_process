@@ -4,17 +4,17 @@
 st="start"
 stp="top"
 rst="restart"
-if [ "${1}" == "$st" ]
+if [ "${1}" == $st ]
 then
 	./manage_my_process & pid_file=/var/run/my_process.pid
 	echo "$!" > pid_file
 	echo "manage_my_process started"
-elif [ "${1}" == "$stp" ]
+elif [ "${1}" == $stp ]
 then
 	echo "manage_my_process stopped"
 	kill "$(cat /var/run/my_process.pid)"
 	rm /var/run/my_process.pid
-elif [ "${1}" == "$rst" ]
+elif [ "${1}" == $rst ]
 then
 	kill "$(cat /var/run/my_process.pid)"
 	rm /var/run/my_process.pid
