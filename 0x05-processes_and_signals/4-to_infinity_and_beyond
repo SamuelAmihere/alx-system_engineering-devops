@@ -2,7 +2,7 @@
 #A script that displays "To infinity and beyond" indefinitely.
 
 str="1"
-while [ -z "$str" ]
+while [ $str -ne 0 ]
 do
 	echo "To infinity and beyond"
 $"sleep" "2"
