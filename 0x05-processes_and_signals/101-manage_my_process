@@ -22,5 +22,5 @@ then
 	echo "$!" > pid_file
 	echo "manage_my_process restarted"
 else
-	echo "Usage: manage_my_process {$st|$stp|$rst}"
+	echo "Usage: manage_my_process {start|stop|restart}"
 fi
