@@ -10,5 +10,5 @@ if [ $counter -eq 2 ]
 then
 	echo "Hi"
 fi
-	counter=$((counter-1))
+	((counter--))
 done
