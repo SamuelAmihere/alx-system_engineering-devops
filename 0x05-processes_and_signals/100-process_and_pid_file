@@ -2,12 +2,11 @@
 #A script that creates, displays, deletes and terminates itself
 
 a="1"
-sudo touch /var/run/holbertonscript.pid
-
-trap 'echo "I hate the kill command"; sudo rm /var/run/holbertonscript.pid; exit' SIGTERM
-trap 'sudo rm /var/run/holbertonscript.pid; exit' SIGQUIT
+sudo touch /var/run/myscript.pid
+sudo bash -c 'echo $$ > /var/run/myscript.pid'
+trap 'echo "I hate the kill command"; sudo rm /var/run/myscript.pid; exit' SIGTERM
+trap 'sudo rm /var/run/myscript.pid; exit' SIGQUIT
 trap 'echo "Y U no love me?!"' SIGINT
-sudo bash -c 'echo $$ > /var/run/holbertonscript.pid'
 while [ $a -eq 1 ]
 do
 	echo "To infinity and beyond"
