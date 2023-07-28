@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 #A script that creates, displays, deletes and terminates itself
 
-str="1"
+a="1"
 sudo touch /var/run/holbertonscript.pid
 
 trap 'echo "I hate the kill command"; sudo rm /var/run/holbertonscript.pid; exit' SIGTERM
 trap 'sudo rm /var/run/holbertonscript.pid; exit' SIGQUIT
 trap 'echo "Y U no love me?!"' SIGINT
 sudo bash -c 'echo $$ > /var/run/holbertonscript.pid'
-while [ $str -ne 0 ]
+while [ $a -eq 1 ]
 do
 	echo "To infinity and beyond"
 	sleep 2
