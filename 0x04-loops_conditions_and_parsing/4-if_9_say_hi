@@ -10,5 +10,5 @@ if [ $counter \= 2 ]
 then
 	echo "hi"
 fi
-	((counter--))
+	(( counter-- ))
 done
