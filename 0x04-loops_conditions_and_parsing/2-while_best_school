@@ -3,8 +3,9 @@
 
 
 counter="10"
+
 while [ $counter \> 0 ]
 do
 	echo "Best School"
-	((counter--))
+	(( counter-- ))
 done
