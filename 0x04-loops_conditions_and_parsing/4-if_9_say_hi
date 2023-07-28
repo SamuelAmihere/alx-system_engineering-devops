@@ -2,12 +2,13 @@
 # Displays "Best School" 10 times.
 
 
-counter=10
+counter="10"
 while [ $counter -gt 0 ]
 do
 	echo "Best School"
 if [ $counter -eq 3 ]
-then echo "Hi"
+then
+	echo "Hi"
 fi
-	(( counter-- ))
+	counter=$((counter-1))
 done
