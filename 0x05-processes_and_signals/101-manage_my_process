@@ -2,7 +2,7 @@
 #A script that controls 'manage_my_process'
 
 st="start"
-stp="top"
+stp="stop"
 rst="restart"
 if [ "${1}" == $st ]
 then
