@@ -8,7 +8,7 @@ do
 	echo "Best School"
 if [ $counter -eq 3 ]
 then
-	echo "hi"
+	echo "Hi"
 fi
 	(( counter-- ))
 done
