@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
-# Displays The content of the current directory
+# Displays the content of the current directory in a list format
 
 for file in *
 do
-    if [[ -f "$file" ]]; then  # Check if it's a regular file
-        echo "$file" | cut -d '-' -f2
-    elif [[ -d "$file" ]]; then  # Check if it's a directory
-        echo "[$file]"
+    # Check if it's a regular file, not hidden, and contains a dash
+    if [[ -f "$file" && ! "$file" =~ ^. && "$file" =~ - ]]; then
+        # Use cut to extract the part after the first dash
+        name=$(echo "$file" | cut -d '-' -f2-)
+        echo "$name"
     fi
 done
