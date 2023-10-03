@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 # Displays The content of the current directory
 
-
-for i in ($ls)
+for file in *
 do
-	echo "$i" | cut -d '-' -f2
+    if [[ -f "$file" ]]; then  # Check if it's a regular file
+        echo "$file" | cut -d '-' -f2
+    elif [[ -d "$file" ]]; then  # Check if it's a directory
+        echo "[$file]"
+    fi
 done
