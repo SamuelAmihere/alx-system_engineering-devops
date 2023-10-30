@@ -1,5 +1,5 @@
 # Project Overview:
-![Simple Web Stack Diagram](./0-simple_web_stack.jpg)
+![0-simple_web_stack](./0-simple_web_stack.jpg)
 
 ## Description
 This project outlines a basic web infrastructure designed to host a website accessible via www.foobar.com. The infrastructure lacks advanced security measures such as firewalls or SSL certificates. It operates on a single server, sharing resources like CPU, RAM, and SSD among its components, including the database and application server.
