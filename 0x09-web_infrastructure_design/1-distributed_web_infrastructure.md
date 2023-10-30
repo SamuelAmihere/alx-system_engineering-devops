@@ -1,5 +1,5 @@
 # Project Overview:
-![1-distributed_web_infrastructure] ./1-distributed_web_infrastructure.jpg)
+![1-distributed_web_infrastructure](./1-distributed_web_infrastructure.jpg)
 
 # Description
 
