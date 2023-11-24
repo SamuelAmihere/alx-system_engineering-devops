@@ -1,6 +1,6 @@
 # Executing a command to kills killmenow
 
-exe {'pkill':
+exec {'pkill':
   command  => 'pkill killmenow',
   provider => 'shell'
 }
