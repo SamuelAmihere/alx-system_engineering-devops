@@ -1,7 +1,6 @@
-#!/usr/bin/pup
-# Install a package
+# Installing a package
 
-file { 'flask':
-  provider => 'pip3',
+file {'flask':
   ensure   => '2.1.0',
+  provider => 'pip3',
 }
