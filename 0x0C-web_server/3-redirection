@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Performing redirections
 
-apt-get update
-apt-get -y install nginx
-echo "Hello World!" | sudo tee /var/www/html/index.html
-sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-enabled/default
-sudo service nginenabled
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo echo "Hello World!" > /var/www/html/index.html
+sudo sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+sudo service nginx start
