@@ -1,24 +1,8 @@
 #!/usr/bin/env bash
 # Performing redirections
 
-apt-get update
-apt-get -y install nginx
-echo "Hello World!" | sudo tee /var/www/html/index.html
-SERVER_CONFIG=\
-"server {
-	listen 80 default_server;
-	listen [::]:80 default_server;
-	root /var/www/html;
-	index index.html;
-	server_name _;
-	location / {
-		try_files \$uri \$uri/ =404;
-	}
-	if (\$request_filename ~ redirect_me){
-		rewrite ^ hhttps://www.youtube.com/watch?v=QH2-TGUlwu4 permanent permanent;
-	}
-}"
-
-sudo bash -c "echo -e '$SERVER_CONFIG' > /etc/nginx/sites-enabled/default"
-
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo echo "Hello World!" | sudo tee /var/www/html/index.html
+sudo sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=c7DIvNmMPkc&list=PL-h6GwC7HdreutdAfv0SX85G93GpRrYKC permanent;' /etc/nginx/sites-enabled/default
 sudo service nginx restart
