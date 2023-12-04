@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Doubles the number of webservers
+sudo apt-get -y update
+sudo apt-get install -y nginx
+# firewall allowing request
+sudo ufw allow 'Nginx HTTP'
+sudo mkdir -p /var/www/html
+sudo chmod -R 755 /var/www
+sudo echo 'Hello World!' > /var/www/html/index.html
+sudo sed -i '/listen 80 default_server;/a add_header X-Served-By $hostname;' /etc/nginx/sites-available/default
+sudo service nginx start
