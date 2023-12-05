@@ -5,7 +5,7 @@ sudo apt-get install -y nginx
 # firewall allowing request
 sudo ufw allow 'Nginx HTTP'
 sudo mkdir -p /var/www/html
-sudo chmod -R 755 /var/www
+sudo chown -R $USER:$USER /var/www/html
 sudo echo 'Hello World!' > /var/www/html/index.html
-sudo sed -i '/listen 80 default_server;/a add_header X-Served-By $hostname;' /etc/nginx/sites-available/default
+sudo sed -i '/listen 80 default_server;/a add_header X-Served-By \$hostname;' /etc/nginx/sites-available/default
 sudo service nginx start
