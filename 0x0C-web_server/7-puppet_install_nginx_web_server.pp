@@ -4,18 +4,12 @@ package {'nginx':
   ensure => 'present',
 }
 
-exec {'install':
-  command  => 'sudo apt-get update ; sudo apt-get -y install nginx',
-  provider => shell,
-
+file { '/var/www/html/index.html':
+  content => 'Hello World!',
 }
 
-exec {'Hello':
-  command  => 'echo "Hello World!" | sudo tee /var/www/html/index.html',
-  provider => shell,
-}
-
-exec {'sudo sed -i "s/listen 80 default_server;/listen 80 default_server;\\n\\tlocation \/redirect_me {\\n\\t\\treturn 301 /var/www/html;\ninternal;\n}" /etc/nginx/sites-available/default':
+exec {'301':
+  command  => 'sudo sed -i "s/server_name _;/server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com permanent;/" /etc/nginx/sites-enabled/default':
   provider => shell,
 }
 
