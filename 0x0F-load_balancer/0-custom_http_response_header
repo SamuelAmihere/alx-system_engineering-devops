@@ -2,4 +2,9 @@
 # Doubles the number of webservers
 sudo sed -i "/server_name _/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-enabled/default
 
-sudo service nginx restart
+sudo apt-get -y update
+sudo apt-get install -y nginx
+
+sudo echo 'Hello World!' > /var/www/html/index.html
+sudo sed -i '/server_name _/a add_header X-Served-By $HOSTNAME;' /etc/nginx/sites-enabled/default
+sudo service nginx start
