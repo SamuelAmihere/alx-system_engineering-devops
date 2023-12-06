@@ -10,7 +10,7 @@ CONFIG_RE="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com pe
 sudo sed -i "s/server_name _;/$CONFIG_RE/" /etc/nginx/sites-enabled/default
 
 sudo echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
-CONFIG_404="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
+CONFIG_404="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\tinternal;\n\t}"
+sudo sed -i "s/listen 80 default_server;/$CONFIG_404/" /etc/nginx/sites-enabled/default
 
-sudo sed -i "s/listen 80 default_server;/$CONFIG_404/" /etc/nginx/sites-available/default
 sudo service nginx restart
