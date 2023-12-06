@@ -11,8 +11,8 @@ frontend http_front
     
 backend web-servers
     balance roundrobin
-    server 5292-web-01 18.208.126.41:80
-    server 5292-web-02 44.200.48.184:80
+    server 321565-web-01 35.168.3.7:80 check
+    server 321565-web-02 100.25.170.135:80 check
 "
 sudo echo "$CONFIG_LB" >> /etc/haproxy/haproxy.cfg
 sudo service haproxy start
