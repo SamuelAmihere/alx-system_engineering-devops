@@ -3,4 +3,4 @@
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx restart
 # Now remove nginx pid
-rm /run/nginx.pid
+sudo rm /run/nginx.pid
