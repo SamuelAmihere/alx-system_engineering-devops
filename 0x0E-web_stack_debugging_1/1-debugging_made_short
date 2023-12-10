@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Making fix short and sweet.
-sudo n -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 sudo service nginx start
 # Now kill nginx process
 kill "$(pgrep 'nginx' | head -1)"
