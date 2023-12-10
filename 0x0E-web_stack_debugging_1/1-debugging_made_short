@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 # Making fix short and sweet.
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-
-# restart nginx
 sudo service nginx restart
-
 # Now remove nginx pid
 rm /run/nginx.pid
