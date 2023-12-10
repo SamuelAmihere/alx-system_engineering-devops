@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
-# 0 Nginx likes port 80
-
+# Nginx likes port 80
 # FIX BUG
 sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-
 # Restart nginx
 sudo service nginx restart
