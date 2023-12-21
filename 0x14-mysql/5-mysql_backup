@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Perform MySQL backup
 sudo mysqldump -u root -p"$1" --all-databases > backup.sql
 ARCHIVE=$(date +"%d-%m-%Y").tar.gz
 gzip -c backup.sql > "$ARCHIVE"
