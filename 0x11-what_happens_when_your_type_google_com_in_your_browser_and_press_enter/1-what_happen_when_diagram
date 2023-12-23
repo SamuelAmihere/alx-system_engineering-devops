@@ -1,0 +1,43 @@
+The Journey of a URL: What Happens When You Type https://www.google.com and Press Enter
+
+Introduction:
+
+In the expansive realm of the internet, the seemingly simple act of typing a URL and pressing Enter sets off a cascade of intricate processes that involve various components working seamlessly together. Whether you're a front-end developer delving into the intricacies of DOM rendering or an SRE navigating the complexities of load balancing mechanisms, a comprehensive understanding of the entire web stack is paramount. In this detailed exploration, we will embark on a journey through the layers of the web stack, unraveling the intricacies of what happens when you type "https://www.google.com" in your browser and press Enter.
+
+![2-secured_and_monitored_web_infrastructure](./google.png)
+
+1. DNS Request:
+
+The journey begins with the Domain Name System (DNS), a critical component of internet infrastructure. Upon entering "https://www.google.com" into your browser, a DNS request is initiated. This process involves querying authoritative DNS servers to translate the human-readable domain name into an IP address. The iterative process continues until the correct IP address is obtained, enabling your browser to establish a connection with the destination server.
+
+2. TCP/IP:
+
+With the IP address in hand, the Transmission Control Protocol (TCP) and Internet Protocol (IP) come into play. TCP ensures the reliable, ordered, and error-checked delivery of data between your computer and the server. IP handles the routing and addressing of data packets across the internet, forming the backbone of internet communication. Together, TCP/IP establishes a reliable connection, facilitating seamless communication between your browser and the destination server.
+
+3. Firewall:
+
+Before reaching the destination server, data packets may encounter firewalls—a crucial line of defense in network security. Firewalls monitor and control incoming and outgoing network traffic, ensuring the security of your system. They act as a barrier, preventing unauthorized access and protecting your computer from potential threats, emphasizing the significance of robust cybersecurity measures in the digital landscape.
+
+4. HTTPS/SSL:
+
+Security is a top priority in the digital age. Hypertext Transfer Protocol Secure (HTTPS) comes into play to encrypt the data exchanged between your browser and the server. Secure Sockets Layer (SSL) or its successor, Transport Layer Security (TLS), establishes a secure connection, safeguarding sensitive information from potential eavesdroppers. This encryption ensures the confidentiality and integrity of the data being transmitted, reinforcing user privacy and data security.
+
+5. Load-Balancer:
+
+For large-scale websites like Google, load balancers play a crucial role in optimizing performance. They distribute incoming network traffic across multiple servers, ensuring efficient resource utilization, enhancing response times, and maintaining high availability. When you type "https://www.google.com," a load balancer directs your request to one of the available servers, effectively balancing the load and enhancing overall system performance.
+
+6. Web Server:
+
+Upon reaching the designated server, a web server takes center stage in processing your request. Whether it's Apache, Nginx, or Microsoft IIS, the web server retrieves the requested web page or content and sends it back to your browser. It plays a pivotal role in delivering static content efficiently, forming a crucial component in the web stack.
+
+7. Application Server:
+
+For dynamic content or interactive elements, an application server steps into the spotlight. Servers like Tomcat, Flask, or Express.js execute server-side scripts, process database queries, and generate dynamic content to be sent back to the web server. The application server's role becomes increasingly vital in delivering a personalized and dynamic user experience.
+
+8. Database:
+
+If the requested content involves database interaction, the application server communicates with a database server. Databases, such as MySQL, PostgreSQL, or MongoDB, store and manage data, playing a pivotal role in the dynamic generation of content on websites. The seamless interaction between the application server and the database ensures the retrieval or update of information in real-time.
+
+Conclusion:
+
+The journey from typing "https://www.google.com" to the display of the search engine's homepage is a testament to the intricate web stack that underpins our online experiences. A nuanced understanding of DNS, TCP/IP, firewalls, HTTPS/SSL, load balancers, web servers, application servers, and databases provides a comprehensive view of the processes involved. Armed with this knowledge, software engineers can navigate the complexities of the web stack with confidence and expertise, contributing to a robust and secure internet ecosystem.
