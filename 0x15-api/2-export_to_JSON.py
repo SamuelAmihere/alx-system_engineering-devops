@@ -1,14 +1,13 @@
 #!/usr/bin/python3
-"""Exporting data to json format"""
-
-from sys import argv
-import csv
-import json
-import requests
+"""Exports data in the JSON format"""
 
 if __name__ == "__main__":
 
-    user_id = argv[1]
+    import json
+    import requests
+    import sys
+
+    user_id = sys.argv[1]
     user = requests.get("https://jsonplaceholder.typicode.com/users/{}"
                         .format(user_id))
     todo = requests.get('https://jsonplaceholder.typicode.com/todos')
