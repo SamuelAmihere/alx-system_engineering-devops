@@ -1,5 +1,10 @@
 #!/usr/bin/python3
-"""Exporting data to csv format"""
+"""Exporting data to json format"""
+
+import requests
+from sys import argv
+import csv
+import json
 
 if __name__ == "__main__":
     import requests
