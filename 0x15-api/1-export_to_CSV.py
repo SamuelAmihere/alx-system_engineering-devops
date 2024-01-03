@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-"""using this REST API, for a given employee ID"""
+"""Exporting data to csv format"""
 
 import requests
 from sys import argv
+import csv
 
 if __name__ == "__main__":
-    user_id = argv[0]
+    user_id = argv[1]
     user = requests.get("https://jsonplaceholder.typicode.com/users/{}"
                         .format(userId))
     user_name = user.json().get('name')
