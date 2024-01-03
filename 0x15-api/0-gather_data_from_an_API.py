@@ -19,7 +19,7 @@ if __name__ == "__main__":
                 completed_task += 1
         tasks += 1
     print('Employee {} is done with tasks({}/{}):'
-          .format(name, completed_task, tasks))
+          .format(user_name, completed_task, tasks))
     for task in todo.json():
         if task.get('userId') == int(user_id) and \
                     task.get('completed'):
