@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 """Exporting data to json format"""
 
-import requests
 from sys import argv
 import csv
 import json
+import requests
 import sys
 
 if __name__ == "__main__":
