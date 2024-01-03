@@ -20,7 +20,6 @@ if __name__ == "__main__":
                              quotechar='"',
                              quoting=csv.QUOTE_ALL, lineterminator='\n')
         for tsk in todo.json():
-            if tsk.get('userId') == int(user_id) and \
-                    tsk.get('completed'):
+            if tsk.get('userId') == int(user_id):
                 fwriter.writerow([user_id, user_name,
                                  str(tsk.get('completed')), tsk.get('title')])
