@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""using this REST API, for a given employee ID"""
+"""Exporting data to csv format"""
 
 import requests
 from sys import argv
+import csv
 
 if __name__ == "__main__":
     user_id = argv[1]
@@ -11,16 +12,13 @@ if __name__ == "__main__":
     user_name = user.json().get('name')
     todo = requests.get('https://jsonplaceholder.typicode.com/todos')
 
-    completed_task = 0
-    tasks = 0
-    for task in todo.json():
-        if task.get('userId') == int(user_id):
-            if task.get('completed'):
-                completed_task += 1
-        tasks += 1
-    print('Employee {} is done with tasks({}/{}):'
-          .format(name, completed_task, tasks))
-    for task in todo.json():
-        if task.get('userId') == int(user_id) and \
+    fname = "{}.csv".format(user_id)
+
+    with open(fname, mode="w"0) as fd:
+        fwriter = csv.writer(fd, delimiter=',',
+                            quotechar='"',
+                            quoting=csv.QUOTE_ALL, lineterminator='\n'
+        for tsk in todo.json():
+            if tsk.get('userId') == int(user_id) and \
                     task.get('completed'):
-            print('\n'.join(["\t " + task.get('title')]))
+                fwriter.writerow([user_id, name, str(tsk.get('completed')), tsk.get('title')])

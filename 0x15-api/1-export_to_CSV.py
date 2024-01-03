@@ -16,9 +16,10 @@ if __name__ == "__main__":
 
     with open(fname, mode="w"0) as fd:
         fwriter = csv.writer(fd, delimiter=',',
-                            quotechar='"',
-                            quoting=csv.QUOTE_ALL, lineterminator='\n'
+                             quotechar='"',
+                             quoting=csv.QUOTE_ALL, lineterminator='\n')
         for tsk in todo.json():
             if tsk.get('userId') == int(user_id) and \
                     task.get('completed'):
-                fwriter.writerow([user_id, name, str(tsk.get('completed')), tsk.get('title')])
+                fwriter.writerow([user_id, name,
+                                 str(tsk.get('completed')), tsk.get('title')])
