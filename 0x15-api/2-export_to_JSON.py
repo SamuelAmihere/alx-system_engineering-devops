@@ -4,22 +4,25 @@
 import requests
 from sys import argv
 import csv
+import json
 
 if __name__ == "__main__":
     user_id = argv[1]
     user = requests.get("https://jsonplaceholder.typicode.com/users/{}"
                         .format(user_id))
-    user_name = user.json().get('name')
+    user_name = user.json().get('username')
     todo = requests.get('https://jsonplaceholder.typicode.com/todos')
 
-    fname = "{}.csv".format(user_id)
+    userTasks = {}
+    tasks = []
+    for task in todo:
+        if task.get('userId') == int(user_id):
+            tasks.append(
+                    {"task": task.get('title'),
+                     "username": user.json().get('username'),
+                     "completed": task.get('completed')})
+    userTasks[user_id] = tasks
 
-    with open(fname, mode="w"0) as fd:
-        fwriter = csv.writer(fd, delimiter=',',
-                             quotechar='"',
-                             quoting=csv.QUOTE_ALL, lineterminator='\n')
-        for tsk in todo.json():
-            if tsk.get('userId') == int(user_id) and \
-                    task.get('completed'):
-                fwriter.writerow([user_id, name, str(tsk.get('completed')),
-                                 tsk.get('title')])
+    file = f"{}.json".format(user_id)
+    with open(file, mode='w') as fd:
+        json.dump(userTasks, fd)
