@@ -13,14 +13,12 @@ if __name__ == "__main__":
     todo = requests.get('https://jsonplaceholder.typicode.com/todos')
 
     fname = "{}.csv".format(user_id)
-    for task in todo.json():
-        if task.get('userId') == int(user_id):
-            if task.get('completed'):
-                completed_task += 1
-        tasks += 1
-    print('Employee {} is done with tasks({}/{}):'
-          .format(name, completed_task, tasks))
-    for task in todo.json():
-        if task.get('userId') == int(user_id) and \
+
+    with open(fname, mode="w"0) as fd:
+        fwriter = csv.writer(fd, delimiter=',',
+                            quotechar='"',
+                            quoting=csv.QUOTE_ALL, lineterminator='\n'
+        for tsk in todo.json():
+            if tsk.get('userId') == int(user_id) and \
                     task.get('completed'):
-            print('\n'.join(["\t " + task.get('title')]))
+                fwriter.writerow([user_id, name, str(tsk.get('completed')), tsk.get('title')])
