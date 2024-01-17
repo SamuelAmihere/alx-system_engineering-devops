@@ -11,7 +11,7 @@ def top_ten(subreddit):
     headers = {
         "User-Agent": UA
     }
-    res = requests.get(url, headers=headers, params=params,
+    request = requests.get(url, headers=headers, params=params,
                             allow_redirects=False)
     if request.status_code != 200:
         print(None)
