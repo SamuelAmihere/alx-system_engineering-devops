@@ -1,26 +1,23 @@
 #!/usr/bin/python3
-"""
-    top ten
-"""
+"""Queries  Reddit API and prints hot postst."""
 import requests
 
 
 def top_ten(subreddit):
+    """Prints 10 hottest posts' titles.
     """
-        prints the first 10 hot posts
-        @subreddit: suscriptors
-    """
-    url = "https://api.reddit.com/r/{}?sort=hot&limit=10".format(subreddit)
-    header = {'User-Agent': 'CustomClient/1.0'}
-    request = requests.get(url, headers=header, allow_redirects=False)
-
-    if request.status_code != 200:
-        print(None)
+    url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
+    UA = "CustomClient/1.0"
+    headers = {
+        "User-Agent": UA
+    }
+    params = {
+        "limit": 10
+    }
+    res = requests.get(url, headers=headers, params=params,
+                            allow_redirects=False)
+    if res.status_code == 404:
+        print("None")
         return
-    jsonreq = request.json()
-
-    if 'data' in jsonreq:
-        for top in jsonreq.get("data").get("children"):
-            print(top.get("data").get("title"))
-    else:
-        print(None)
+    data = res.json().get("data")
+    [print(c.get("data").get("title")) for c in data.get("children")]
