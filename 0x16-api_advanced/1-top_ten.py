@@ -7,7 +7,7 @@ def top_ten(subreddit):
     """Prints 10 hottest posts' titles.
     """
     url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
-    UA = "CustomClient/1.0"
+    UA = "My-User-Agent"
     headers = {
         "User-Agent": UA
     }
@@ -16,11 +16,8 @@ def top_ten(subreddit):
     }
     res = requests.get(url, headers=headers, params=params,
                        allow_redirects=False)
-    if res.status_code != 200:
+    if res.status_code >= 300:
         print("None")
-        return
-    if 'data' in res:
-        for top in res.get("data").get("children"):
-            print(top.get("data").get("title"))
     else:
-        print(None)
+        for child in res.json().get("data").get("children"):
+            print(child.get("data").get("title"))
