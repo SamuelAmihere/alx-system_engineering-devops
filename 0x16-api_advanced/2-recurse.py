@@ -3,14 +3,14 @@
 import requests
 
 
-def recurse(subreddit, hot_list=[]):
+def recurse(subreddit, hot_list=[], count=0, after=None):
     """Queries the Reddit API and returns a list
     """
     url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
+    UA = "My-User-Agent"
     params = {"count": count, "after": after}
-    headers = {"User-Agent": "My-User-Agent"}
-    res = requests.get(url, params=params, headers=headers,
-                       allow_redirects=False)
+    headers = {"User-Agent": UA}
+    res = requests.get(url, params=params, headers=headers, allow_redirects=False)
     if res.status_code >= 400:
         return None
 
@@ -24,5 +24,5 @@ def recurse(subreddit, hot_list=[]):
     if not data.get("data").get("after"):
         return hotl
 
-    return recurse(subreddit, hotl, res.get("data").get("count"),
+    return recurse(subreddit, hotl, data.get("data").get("count"),
                    data.get("data").get("after"))
