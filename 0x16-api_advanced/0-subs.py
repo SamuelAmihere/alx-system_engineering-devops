@@ -7,7 +7,7 @@ def number_of_subscribers(subreddit):
     """Finds the total number of subscribers.
     """
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
-    UA = "linux:0x16.api.advanced:v1.0.0 (by /u/bdov_)"
+    UA = "Client"
     headers = {
         "User-Agent": UA
     }
