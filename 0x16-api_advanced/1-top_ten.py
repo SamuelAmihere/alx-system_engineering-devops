@@ -1,18 +1,19 @@
 #!/usr/bin/python3
-"""Queries  Reddit API and prints hot postst."""
+"""
+    top ten
+"""
 import requests
 
 
 def top_ten(subreddit):
-    """Prints 10 hottest posts' titles.
     """
-    url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
-    UA = "CustomClient/1.0"
-    headers = {
-        "User-Agent": UA
-    }
-    request = requests.get(url, headers=headers, params=params,
-                            allow_redirects=False)
+        prints the first 10 hot posts
+        @subreddit: suscriptors
+    """
+    url = "https://api.reddit.com/r/{}?sort=hot&limit=10".format(subreddit)
+    header = {'User-Agent': 'CustomClient/1.0'}
+    request = requests.get(url, headers=header, allow_redirects=False)
+
     if request.status_code != 200:
         print(None)
         return
