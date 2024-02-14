@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Querying subscribers on a Reddit API
 """
+
 import requests
 
 
