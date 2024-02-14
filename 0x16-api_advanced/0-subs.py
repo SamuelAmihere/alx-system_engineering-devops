@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Querying subscribers on a Reddit API ."""
+
+
 import requests
 
 
@@ -11,6 +13,7 @@ def number_of_subscribers(subreddit):
     headers = {
         "User-Agent": UA
     }
+
     res = requests.get(url, headers=headers, allow_redirects=False)
 
     if res.status_code != 200:
