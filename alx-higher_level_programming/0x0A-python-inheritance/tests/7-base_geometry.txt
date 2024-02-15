@@ -1,0 +1,78 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+
+>>> isinstance(bg, BaseGeometry)
+True
+
+>>> bg.area(8)
+Traceback (most recent call last):
+            ...
+TypeError: area() takes 1 positional argument but 2 were given
+
+>>> bg.area()
+Traceback (most recent call last):
+            ...
+Exception: area() is not implemented
+
+>>> bg.__class__.area()
+Traceback (most recent call last):
+            ...
+TypeError: area() missing 1 required positional argument: 'self'
+
+>>> bg.integer_validator()
+Traceback (most recent call last):
+            ...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> bg.integer_validator(1, 3)
+>>> bg.integer_validator(5, 2, 1)
+Traceback (most recent call last):
+            ...
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+>>> bg.integer_validator("Baa", {3, 2})
+Traceback (most recent call last):
+            ...
+TypeError: Baa must be an integer
+
+>>> bg.integer_validator(None, 10)
+
+
+>>> bg.integer_validator("", 5)
+
+>>> bg.integer_validator("Musa", 98)
+
+>>> bg.integer_validator("test", -9999)
+Traceback (most recent call last):
+            ...
+ValueError: test must be greater than 0
+
+>>> bg.integer_validator("test", 0)
+Traceback (most recent call last):
+            ...
+ValueError: test must be greater than 0
+
+>>> bg.integer_validator("test", "6")
+Traceback (most recent call last):
+            ...
+TypeError: test must be an integer
+
+>>> bg.integer_validator("test", (6,))
+Traceback (most recent call last):
+            ...
+TypeError: test must be an integer
+
+>>> bg.integer_validator("as", [5])
+Traceback (most recent call last):
+            ...
+TypeError: as must be an integer
+
+>>> bg.integer_validator("char", False)
+Traceback (most recent call last):
+            ...
+TypeError: char must be an integer
+
+>>> bg.integer_validator("empty", None)
+Traceback (most recent call last):
+            ...
+TypeError: empty must be an integer

@@ -1,0 +1,40 @@
+>>> add_integer = __import__('0-add_integer').add_integer
+
+>>> add_integer (-5, 5)
+0
+>>> add_integer (10000, 1)
+10001
+>>> add_integer (0, 9)
+9
+>>> add_integer (9, 0)
+9
+>>> add_integer (0, 0)
+0
+>>> add_integer (2)
+100
+>>> add_integer (-8)
+90
+>>> add_integer(9999999999, 1)
+10000000000
+>>> add_integer(1.5, 1.5)
+2
+>>> add_integer()
+Traceback (most recent call last):
+TypeError: add_integer() missing 1 required positional argument: 'a'
+>>> add_integer('a')
+Traceback (most recent call last):
+TypeError: a must be an integer
+>>> add_integer(2, 'b')
+Traceback (most recent call last):
+TypeError: b must be an integer
+>>> add_integer('a', 'b')
+Traceback (most recent call last):
+TypeError: a must be an integer
+>>> add_integer(int('inf'), 2)
+Traceback (most recent call last):
+...
+ValueError: invalid literal for int() with base 10: 'inf'
+>>> add_integer(6, float('inf'))
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
