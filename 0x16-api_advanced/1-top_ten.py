@@ -8,12 +8,8 @@ def top_ten(subreddit):
     """
     url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
     UA = "My-User-Agent"
-    headers = {
-        "User-Agent": UA
-    }
-    params = {
-        "limit": 10
-    }
+    headers = {"User-Agent": UA}
+    params = {"limit": 10}
     res = requests.get(url, headers=headers, params=params,
                        allow_redirects=False)
     if res.status_code >= 300:
