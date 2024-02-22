@@ -1,8 +1,8 @@
 server {
         listen 80;
         listen [::]:80;
-
         server_name 54.165.249.32;
+	add_header X-Served-By $HOSTNAME;
 
         # Serve /airbnb-dynamic/ on Airbnb_clone_v2
         location = /airbnb-onepage/ {
