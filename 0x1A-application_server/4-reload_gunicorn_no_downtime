@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 # Reloads Gunicorn
-kill -HUP `ps -C gunicorn fch -o pid | head -n 1`
+systemctl status gunicorn | grep -oE 'Main PID: [0-9]+' | cut -d ' ' -f3 | xargs kill -HUP
