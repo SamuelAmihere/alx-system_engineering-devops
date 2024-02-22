@@ -1,0 +1,55 @@
+server {
+        listen 80 default_server;
+        listen [::]:80 ipv6only=on default_server;
+        server_name localhost;
+        add_header X-Served-By $HOSTNAME;
+        root /var/www/html;
+
+        # AIRBNB PROJECT
+	location /hbnb_static/ {
+		alias /data/web_static/current/;
+		autoindex off;
+	}
+        # Serve /airbnb-dynamic/ on Airbnb_clone_v2
+        location = /airbnb-onepage/ {
+                proxy_pass http://127.0.0.1:5000/airbnb-onepage/;
+        }
+
+        # Serve /airbnb-dynamic/number_odd_or_even/ on Airbnb_clone_v2
+        location ~ /airbnb-dynamic/number_odd_or_even/(\d+)$ {
+                proxy_pass http://127.0.0.1:5001/number_odd_or_even/$1;
+        }
+        # Serve /api on Airbnb_clone_v3
+        location /api {
+        	include proxy_params;
+                proxy_pass http://127.0.0.1:5002/api;
+        }
+        # Serv /2-hbnb route of Airbnb_clone_v4 as root location
+        location / {
+                include proxy_params;
+                proxy_pass http://127.0.0.1:5003/2-hbnb;
+        }
+        # Serve static content for Airbnb_clone_v4
+        location ^~ /static/ {
+                include  /etc/nginx/mime.types;
+                root /home/ubuntu/AirBnB_clone_v4/web_dynamic;
+        }
+        # ------ End of AIRBNB-------
+
+        error_page 404 /404.html;
+        location = /404.html {
+                root /var/www/html;
+                internal;
+        }
+
+        # Add index.php to the list if you are using PHP
+        index index.html index.htm index.nginx-debian.html;
+
+        rewrite ^/redirect_me https://www.youtube.com permanent;
+
+        location / {
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+        }
+}
